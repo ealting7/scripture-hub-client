@@ -1,0 +1,19 @@
+<div>
+    <div class="nav-header" *ngIf="isOpen()">Study</div>
+    <a class="nav-item" href="/bible-reader" [title]="isOpen() ? '' : 'Bible Reader'">
+      <mat-icon>auto_stories</mat-icon>
+      <span class="nav-text" *ngIf="isOpen()">Bible Reader</span>
+    </a>
+
+    <a class="nav-item" href="/my-journal" [title]="isOpen() ? '' : 'My journal'">
+      <mat-icon>edit_note</mat-icon>
+      <span class="nav-text" *ngIf="isOpen()">My journal</span>
+    </a>        
+
+    <a class="nav-item" href="/sermon-study" [title]="isOpen() ? '' : 'Sermon Study'">
+      <mat-icon>school</mat-icon>
+      <span class="nav-text" *ngIf="isOpen()">Sermon Study</span>
+    </a>    
+    
+    <div class="nav-separator" *ngIf="isOpen()"></div>
+</div> 

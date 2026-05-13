@@ -1,0 +1,16 @@
+<div>
+    <div *ngIf="isOpen()" class="nav-header">Church</div>
+
+    <a class="nav-item" href="/giving-portal" [title]="isOpen() ? '' : 'Giving Portal'">
+        <mat-icon>volunteer_activism</mat-icon>
+        <span class="nav-text" *ngIf="isOpen()">Giving Portal</span>
+    </a>   
+    
+    <a class="nav-item" href="/marketplace" [title]="isOpen() ? '' : 'Marketplace'">
+        <mat-icon>storefront</mat-icon>
+        <span class="nav-text" *ngIf="isOpen()">Marketplace</span>
+    </a>       
+    
+    <div class="nav-separator" *ngIf="isOpen()"></div>
+</div> 
+

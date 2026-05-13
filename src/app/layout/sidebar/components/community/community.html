@@ -1,0 +1,16 @@
+<div>
+    <div *ngIf="isOpen()" class="nav-header">Community</div>
+
+    <a class="nav-item" href="/prayer-tracker" [title]="isOpen() ? '' : 'Prayer Tracker'">
+        <mat-icon>sign_language</mat-icon>
+        <span class="nav-text" *ngIf="isOpen()">Prayer Tracker</span>
+    </a>   
+    
+    <a class="nav-item" href="/my-groups" [title]="isOpen() ? '' : 'My groups'">
+        <mat-icon>groups</mat-icon>
+        <span class="nav-text" *ngIf="isOpen()">My groups</span>
+    </a>       
+    
+    <div class="nav-separator" *ngIf="isOpen()"></div>
+</div> 
+
