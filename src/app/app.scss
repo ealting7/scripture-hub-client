@@ -1,0 +1,59 @@
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 10px;
+    border: 1px solid #979696;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fffdfd;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #fffdfd;
+    border-bottom: 1px solid #979696;
+    height: 80px;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.app-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.sidebar-drawer {
+    width: 240px;
+    border-right: 1px solid #979696;
+    background-color: #fffdfd;
+    transition: width 0.3s ease;
+
+    &.collapsed {
+        width: 72px;
+
+        ::ng-deep .mdc-drawer__content {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+
+    ::ng-deep .mdc-drawer__content {
+        padding: 12px;
+        background-color: #fffdfd;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+.content-area {
+    flex: 1;
+    padding: 20px;
+    background-color: #faf7f7;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
