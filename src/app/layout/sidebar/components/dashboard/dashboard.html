@@ -1,0 +1,12 @@
+<div>
+  <a class="nav-item" href="/dashboard" (click)="handleSelectNaviationItem($event, 'Dashboard')" [title]="isOpenDashboard() ? '' : 'Dashboard'">
+      <mat-icon>dashboard</mat-icon>
+      @if (isOpenDashboard()) {
+        <span class="nav-text">Dashboard</span>
+      }
+  </a>
+
+  @if (isOpenDashboard()) {
+    <div class="nav-separator"></div>
+  }
+</div>
