@@ -3,22 +3,18 @@
     <button 
       mat-icon-button 
       (click)="onToggle()" 
-      [attr.aria-label]="isOpen() ? 'Collapse sidebar' : 'Expand sidebar'"
+      [attr.aria-label]="isOpenSidebar() ? 'Collapse sidebar' : 'Expand sidebar'"
       class="toggle-btn">
-      <mat-icon>{{ isOpen() ? 'chevron_left' : 'chevron_right' }}</mat-icon>
+      <mat-icon>{{ isOpenSidebar() ? 'chevron_left' : 'chevron_right' }}</mat-icon>
     </button>
   </div>
 
   <nav class="sidebar-nav">
-    <a class="nav-item" href="/dashboard" [title]="isOpen() ? '' : 'Dashboard'">
-      <mat-icon>dashboard</mat-icon>
-      <span class="nav-text" *ngIf="isOpen()">Dashboard</span>
-    </a>
-
-    <sidebar-study [isOpen]="isOpen()"></sidebar-study>
-    <sidebar-community [isOpen]="isOpen()"></sidebar-community>
-    <sidebar-church [isOpen]="isOpen()"></sidebar-church>
-
+    <sidebar-dashboard [isOpenDashboard]="isOpenSidebar()"></sidebar-dashboard>
+    <sidebar-study [isOpenStudy]="isOpenSidebar()"></sidebar-study>
+    <sidebar-community [isOpenCommunity]="isOpenSidebar()"></sidebar-community>
+    <sidebar-church [isOpenChurch]="isOpenSidebar()"></sidebar-church>
+    <sidebar-user-profile [isOpenProfile]="isOpenSidebar()"></sidebar-user-profile>
   </nav>
 </div>
 
