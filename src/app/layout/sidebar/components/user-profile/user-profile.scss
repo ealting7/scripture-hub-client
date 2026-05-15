@@ -1,0 +1,57 @@
+.nav-item {
+    display: flex;
+    align-items: center;    
+    gap: 12px;
+    padding: 12px 8px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    white-space: nowrap;
+
+    .profile-icon {
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        border-radius: 50%;
+        padding: 0;
+        font-size: 14px;
+        background-color: #e6e6fa;
+        color: #6a0dad;
+    }
+
+    .profile-button {
+        background: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        text-align: left;   
+    }
+
+    .profile-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .user-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .user-text {
+        font-weight: bold;
+    }
+
+    .plan-text {
+        font-size: 12px;
+    }
+}
+
+:host-context(.collapsed) .nav-item {
+  justify-content: center;
+}
