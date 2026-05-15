@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Sidebar } from './layout/sidebar/pages/sidebar';
 import { Header } from './layout/header/pages/header';
