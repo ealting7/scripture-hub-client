@@ -1,19 +1,30 @@
 <div>
-    <div class="nav-header" *ngIf="isOpen()">Study</div>
-    <a class="nav-item" href="/bible-reader" [title]="isOpen() ? '' : 'Bible Reader'">
+    @if (isOpenStudy()) {
+      <div class="nav-header">Study</div>
+    }
+
+    <a class="nav-item" href="/bible-reader" (click)="handleSelectNaviationItem($event, 'Bible Reader')" [title]="isOpenStudy() ? '' : 'Bible Reader'">
       <mat-icon>auto_stories</mat-icon>
-      <span class="nav-text" *ngIf="isOpen()">Bible Reader</span>
+      @if (isOpenStudy()) {
+        <span class="nav-text">Bible Reader</span>
+      }
     </a>
 
-    <a class="nav-item" href="/my-journal" [title]="isOpen() ? '' : 'My journal'">
+    <a class="nav-item" href="/my-journal" (click)="handleSelectNaviationItem($event, 'My Journal')" [title]="isOpenStudy() ? '' : 'My Journal'">
       <mat-icon>edit_note</mat-icon>
-      <span class="nav-text" *ngIf="isOpen()">My journal</span>
+      @if (isOpenStudy()) {
+        <span class="nav-text">My Journal</span>
+      }
     </a>        
 
-    <a class="nav-item" href="/sermon-study" [title]="isOpen() ? '' : 'Sermon Study'">
+    <a class="nav-item" href="/sermon-study" (click)="handleSelectNaviationItem($event, 'Sermon Study')" [title]="isOpenStudy() ? '' : 'Sermon Study'">
       <mat-icon>school</mat-icon>
-      <span class="nav-text" *ngIf="isOpen()">Sermon Study</span>
+      @if (isOpenStudy()) {
+        <span class="nav-text">Sermon Study</span>
+      }
     </a>    
     
-    <div class="nav-separator" *ngIf="isOpen()"></div>
+    @if (isOpenStudy()) {
+      <div class="nav-separator"></div>
+    }
 </div> 

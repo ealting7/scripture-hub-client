@@ -1,16 +1,24 @@
 <div>
-    <div *ngIf="isOpen()" class="nav-header">Church</div>
+    @if (isOpenChurch()) {
+        <div class="nav-header">Church</div>
+    }
 
-    <a class="nav-item" href="/giving-portal" [title]="isOpen() ? '' : 'Giving Portal'">
+    <a class="nav-item" href="/giving-portal" (click)="handleSelectNaviationItem($event, 'Giving Portal')" [title]="isOpenChurch() ? '' : 'Giving Portal'">
         <mat-icon>volunteer_activism</mat-icon>
-        <span class="nav-text" *ngIf="isOpen()">Giving Portal</span>
+        @if (isOpenChurch()) {
+            <span class="nav-text">Giving Portal</span>
+        }
     </a>   
     
-    <a class="nav-item" href="/marketplace" [title]="isOpen() ? '' : 'Marketplace'">
+    <a class="nav-item" href="/marketplace" (click)="handleSelectNaviationItem($event, 'Marketplace')" [title]="isOpenChurch() ? '' : 'Marketplace'">
         <mat-icon>storefront</mat-icon>
-        <span class="nav-text" *ngIf="isOpen()">Marketplace</span>
+        @if (isOpenChurch()) {
+            <span class="nav-text">Marketplace</span>
+        }
     </a>       
     
-    <div class="nav-separator" *ngIf="isOpen()"></div>
+    @if (isOpenChurch()) {
+        <div class="nav-separator"></div>
+    }
 </div> 
 

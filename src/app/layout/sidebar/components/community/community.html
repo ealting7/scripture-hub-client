@@ -1,16 +1,24 @@
 <div>
-    <div *ngIf="isOpen()" class="nav-header">Community</div>
+    @if (isOpenCommunity()) {
+        <div class="nav-header">Community</div>
+    }
 
-    <a class="nav-item" href="/prayer-tracker" [title]="isOpen() ? '' : 'Prayer Tracker'">
+    <a class="nav-item" href="/prayer-tracker" (click)="handleSelectNaviationItem($event, 'Prayer Tracker')" [title]="isOpenCommunity() ? '' : 'Prayer Tracker'">
         <mat-icon>sign_language</mat-icon>
-        <span class="nav-text" *ngIf="isOpen()">Prayer Tracker</span>
+        @if (isOpenCommunity()) {
+            <span class="nav-text">Prayer Tracker</span>
+        }
     </a>   
     
-    <a class="nav-item" href="/my-groups" [title]="isOpen() ? '' : 'My groups'">
+    <a class="nav-item" href="/my-groups" (click)="handleSelectNaviationItem($event, 'My Groups')" [title]="isOpenCommunity() ? '' : 'My Groups'">
         <mat-icon>groups</mat-icon>
-        <span class="nav-text" *ngIf="isOpen()">My groups</span>
+        @if (isOpenCommunity()) {
+            <span class="nav-text">My Groups</span>
+        }
     </a>       
     
-    <div class="nav-separator" *ngIf="isOpen()"></div>
+    @if (isOpenCommunity()) {
+        <div class="nav-separator"></div>
+    }
 </div> 
 
