@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'header-title',
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './title.html',
   styleUrl: './title.scss',
 })
